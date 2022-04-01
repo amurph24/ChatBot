@@ -1,7 +1,8 @@
 # Psychiatrist ChatBot
 ## COSC 310 Software Engineering
-### Group 21: Pavni Agarwal, Riley Bolen, Gerren Hunter, Graham Itcush, Aidan Murphy and Maxwell Rex
-### Individual project: Aidan Murphy
+## Individual project: Aidan Murphy
+### Derived from Group 21: Pavni Agarwal, Riley Bolen, Gerren Hunter, Graham Itcush, Aidan Murphy and Maxwell Rex
+
 
 ------
 
