@@ -46,6 +46,7 @@ Link to source can be found here: https://stackoverflow.com/questions/38916452/n
 #### Train ChatBot
 
 To train the chatbot you can run the file `app/chatbot/train.py`
+This isn't necessary though as this file has been run and the bot is already trained
 
 #### Use ChatBot
 
