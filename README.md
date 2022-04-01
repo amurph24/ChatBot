@@ -16,6 +16,8 @@
 
 `pip install tensorflow`
 
+`pip install googletrans==3.1.0a0`
+
 `pip install spacy`
 
 download spacy model

@@ -11,7 +11,8 @@ import tkinter                                  # used to build user interface
 from tkinter import *
 import spacy
 from spacy import displacy
-
+import googletrans
+from googletrans import Translator
 
 # load the trained model and pickle files
 intents = json.loads(open('app/chatbot/data/intents.json').read())
@@ -24,6 +25,20 @@ classes = pickle.load(open('app/chatbot/data/classes.pkl', 'rb'))
 nlp = spacy.load('en_core_web_sm')
 nlp.add_pipe('merge_entities')
 
+# googletrans stuff
+translator = Translator()
+lang = 'en'
+
+# translate functions
+def toEnglish(sentence):
+    translated = translator.translate(sentence)
+    global lang
+    lang = translated.src
+    return translated.text
+
+def toDetected(sentence, outputLang):
+    translated = translator.translate(sentence, src='en', dest=outputLang)
+    return translated.text
 
 # POS Mapper Function (used to ensure POS compatibility with lemmatizer)
 def get_pos(word):
@@ -53,9 +68,11 @@ def ner(sentence):
 
 # function that returns a bag of words for the input sentence 
 def bow(sentence, words, show_details=True):
-    
+    # check input language (translate into english if necessary)
+    sentence_words = toEnglish(sentence)
+
     #search for difficult to recognize named entities
-    sentence_words = ner(sentence)
+    sentence_words = ner(sentence_words)
     
     # tokenize the pattern/sentence
     sentence_words = clean_up_sentence(sentence_words)
@@ -107,6 +124,7 @@ def getResponse(predicted_classes, intents_json):
 def chatbot_response(text):
     predicted_classes = predict_class(text, model)
     res = getResponse(predicted_classes, intents)
+    res = toDetected(res, lang)
     return res
 
 # function that acts as a send button for the user interface
@@ -120,7 +138,7 @@ def send():
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
 
         res = chatbot_response(msg)
-        ChatLog.insert(END, "Psychiatrist: " + res + '\n\n')
+        ChatLog.insert(END, "Psychiatrist (" + lang + "): " + res + '\n\n')
 
         ChatLog.config(state=DISABLED)
         ChatLog.yview(END)
