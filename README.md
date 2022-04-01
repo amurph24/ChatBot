@@ -60,7 +60,7 @@ To use the chatbot you can run the file `app/chatbot/chatbot_app.py`
 
 #### google translate (googletrans library)
 
-The chabot is now able to detect and translate a wide range of languages through the use of the googletrans library, the below example shows english, spanish, german and arabic. The bot translates the input text to english remembering what language it was input as, interprets and selects an appropriate response. The bot then translates it back into the source language and outputs it.
+The chatbot is now able to detect and translate a wide range of languages using googletrans, the below example shows English, Spanish, German and Arabic. The bot detects the input language and saves it, translates the text to English, interprets it and then selects an appropriate response. The bot then translates it back into the saved input language and outputs it.
 
 <img width="365" src="https://user-images.githubusercontent.com/77344004/161349714-05d2b003-37d0-4565-afbb-366fb5e23d0f.png">
 
