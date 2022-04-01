@@ -61,6 +61,7 @@ To use the chatbot you can run the file `app/chatbot/chatbot_app.py`
 #### google translate (googletrans library)
 
 The chabot is now able to detect and translate a wide range of languages through the use of the googletrans library, the below example shows english, spanish, german and arabic. The bot translates the input text to english remembering what language it was input as, interprets and selects an appropriate response. The bot then translates it back into the source language and outputs it.
+
 <img width="365" src="https://user-images.githubusercontent.com/77344004/161349714-05d2b003-37d0-4565-afbb-366fb5e23d0f.png">
 
 You: Hi
@@ -76,6 +77,9 @@ You: ich bin arzt (I am a doctor)
 Psychiatrist (de): Interessant. Magst du deine Arbeit? (interesting do you like your work?)
 
 You: أرى الهلوسة
+
 (I see hallucinations)
+
 Psychiatrist (ar): تمام. هل لاحظت انخفاضًا في التنظيم في حياتك؟ (على سبيل المثال ، المنزل شديد الفوضى ، وانخفاض الرعاية الذاتية بشكل كبير ، وعدم القدرة على أداء المهام التي كنت تقوم بها من قبل
+
 (OK. Have you noticed a decrease in organization in your life? (For example, the house is too cluttered, self-care is significantly reduced, and the inability to perform the tasks you used to do before)
