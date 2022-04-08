@@ -10,6 +10,8 @@
 
 #### Install Dependencies
 
+`pip install flask`
+
 `pip install nltk`
 
 `pip install numpy`
